@@ -19,6 +19,7 @@ export default function ClaimsScreen() {
   const [claimNumber, setClaimNumber] = useState("");
   const [damageType, setDamageType] = useState("");
   const [notes, setNotes] = useState("");
+  const [summaryVisible, setSummaryVisible] = useState(false);
 
   const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -30,6 +31,19 @@ export default function ClaimsScreen() {
     if (!result.canceled) {
       setImage(result.assets[0].uri);
     }
+  };
+
+  const generateSummary = () => {
+    setSummaryVisible(true);
+    console.log({
+      customerName,
+      address,
+      insuranceCompany,
+      claimNumber,
+      damageType,
+      notes,
+      image,
+    });
   };
 
   return (
@@ -94,6 +108,37 @@ export default function ClaimsScreen() {
           onChangeText={setNotes}
           multiline
         />
+        <TouchableOpacity
+          style={styles.summaryButton}
+          onPress={generateSummary}
+        >
+          <Text style={styles.buttonText}>Generate Claim Summary</Text>
+        </TouchableOpacity>
+        {summaryVisible && (
+          <View style={{ marginTop: 20 }}>
+            <Text style={{ color: "white", fontSize: 18, fontWeight: "600" }}>
+              Claim Summary
+            </Text>
+            <Text style={{ color: "#94a3b8", marginTop: 10 }}>
+              Customer: {customerName}
+            </Text>
+            <Text style={{ color: "#94a3b8", marginTop: 5 }}>
+              Address: {address}
+            </Text>
+            <Text style={{ color: "#94a3b8", marginTop: 5 }}>
+              Insurance Company: {insuranceCompany}
+            </Text>
+            <Text style={{ color: "#94a3b8", marginTop: 5 }}>
+              Claim Number: {claimNumber}
+            </Text>
+            <Text style={{ color: "#94a3b8", marginTop: 5 }}>
+              Damage Type: {damageType}
+            </Text>
+            <Text style={{ color: "#94a3b8", marginTop: 5 }}>
+              Notes: {notes}
+            </Text>
+          </View>
+        )}
       </View>
     </ScrollView>
   );
@@ -163,5 +208,13 @@ const styles = StyleSheet.create({
   notes: {
     minHeight: 100,
     textAlignVertical: "top",
+  },
+  summaryButton: {
+    width: "100%",
+    backgroundColor: "#22c55e",
+    padding: 16,
+    borderRadius: 12,
+    marginTop: 18,
+    alignItems: "center",
   },
 });
