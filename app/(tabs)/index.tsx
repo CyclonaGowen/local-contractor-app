@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function HomeScreen() {
@@ -8,22 +9,32 @@ export default function HomeScreen() {
 
       <Text style={styles.subtitle}>Contractor & Insurance Claim Platform</Text>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push("/jobs" as any)}
+      >
         <Ionicons name="briefcase" size={28} color="white" />
         <Text style={styles.buttonText}>Find Jobs</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push("/estimate" as any)}
+      >
         <Ionicons name="document-text" size={28} color="white" />
         <Text style={styles.buttonText}>Create Estimate</Text>
       </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push("/claims" as any)}
+      >
         <Ionicons name="shield-checkmark" size={28} color="white" />
         <Text style={styles.buttonText}>Insurance Claims</Text>
       </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push("/projects")}
+      >
         <Ionicons name="hammer" size={28} color="white" />
         <Text style={styles.buttonText}>My Projects</Text>
       </TouchableOpacity>
