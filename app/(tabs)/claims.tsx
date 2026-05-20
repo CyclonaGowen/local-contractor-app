@@ -1,7 +1,22 @@
 import { Ionicons } from "@expo/vector-icons";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import * as ImagePicker from "expo-image-picker";
+import { useState } from "react";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ClaimsScreen() {
+  const [image, setImage] = useState<string | null>(null);
+
+  const pickImage = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ["images"],
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setImage(result.assets[0].uri);
+    }
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Insurance Claims</Text>
@@ -15,23 +30,35 @@ export default function ClaimsScreen() {
           Take photos of property damage for AI-assisted estimates.
         </Text>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={pickImage}>
           <Text style={styles.buttonText}>Upload Photos</Text>
         </TouchableOpacity>
       </View>
 
       <View style={styles.card}>
-        <Ionicons name="document-text" size={40} color="#2563eb" />
+        <Ionicons name="camera" size={40} color="#2563eb" />
 
-        <Text style={styles.cardTitle}>Generate Claim Report</Text>
+        <Text style={styles.cardTitle}>Upload Damage Photos</Text>
 
         <Text style={styles.cardText}>
-          Create insurance-ready documentation and repair estimates.
+          Take photos of property damage for AI-assisted estimates.
         </Text>
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Create Report</Text>
+        <TouchableOpacity style={styles.button} onPress={pickImage}>
+          <Text style={styles.buttonText}>Upload Photos</Text>
         </TouchableOpacity>
+
+        {image && (
+          <Image
+            source={{ uri: image }}
+            style={{
+              width: 250,
+              height: 250,
+              borderRadius: 16,
+              marginTop: 20,
+            }}
+          />
+        )}
       </View>
     </View>
   );
