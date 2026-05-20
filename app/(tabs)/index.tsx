@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function HomeScreen() {
@@ -8,18 +9,22 @@ export default function HomeScreen() {
       <Text style={styles.subtitle}>Contractor & Insurance Claim Platform</Text>
 
       <TouchableOpacity style={styles.button}>
+        <Ionicons name="briefcase" size={28} color="white" />
         <Text style={styles.buttonText}>Find Jobs</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button}>
+        <Ionicons name="document-text" size={28} color="white" />
         <Text style={styles.buttonText}>Create Estimate</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button}>
+        <Ionicons name="shield-checkmark" size={28} color="white" />
         <Text style={styles.buttonText}>Insurance Claims</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button}>
+        <Ionicons name="hammer" size={28} color="white" />
         <Text style={styles.buttonText}>My Projects</Text>
       </TouchableOpacity>
     </View>
@@ -56,6 +61,9 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     marginBottom: 15,
     alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: 10,
   },
 
   buttonText: {
