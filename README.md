@@ -1,75 +1,81 @@
 # ClaimBuild
 
-ClaimBuild is a mobile app platform designed for contractors, homeowners, and insurance-related property claims.
+ClaimBuild is a mobile-first contractor and insurance claims management platform designed to simplify property damage documentation, repair estimates, and contractor workflows.
 
-The goal is to simplify:
+The app helps contractors and homeowners:
 
-- contractor job management
-- insurance claim documentation
-- repair estimates
-- damage photo collection
-- project tracking
-
-All from a mobile-first experience.
+- manage insurance claims
+- upload damage photos
+- organize claim details
+- track claim statuses
+- manage projects from a mobile device
 
 ---
 
 # Current Features
 
-## Mobile Contractor Dashboard
+## Contractor Dashboard
 
-- Clean mobile UI
-- Contractor-focused workflow
-- Navigation between screens
+- Mobile-friendly contractor interface
+- Multi-screen navigation
+- Clean modern UI
 
-## Find Local Jobs
+## Insurance Claims Workflow
 
-- Browse contractor jobs
-- Insurance-related work opportunities
-- Local project listings
+- Upload damage photos
+- Enter customer and insurance details
+- Save claims locally
+- Generate claim summaries
+- Track claim statuses
 
-## Insurance Claims
+## Claim Management System
 
-- Upload damage photos directly from phone
-- Prepare for AI-assisted estimates
-- Claim documentation workflow
+- Saved claims list
+- Claim detail pages
+- Status badges
+- Scrollable mobile workflow
+- Keyboard-friendly form handling
 
-## Image Upload System
+## Navigation System
 
-- Mobile image picker integration
-- Real-time image preview
-- Foundation for claim documentation
+- Expo Router navigation
+- Dynamic claim detail screens
+- Interactive claim cards
 
 ---
 
 # Planned Features
 
-- AI-generated repair estimates
-- Scope of work generation
-- Insurance claim PDF reports
-- Contractor profiles
-- Customer messaging
-- Scheduling system
-- Project management
+- Supabase cloud database
+- User authentication
+- Contractor accounts
 - Homeowner accounts
-- Contractor bidding
+- Cloud image storage
+- AI-generated estimates
+- Insurance claim PDF reports
+- Scope of work generation
+- Messaging system
+- Scheduling tools
 - Payment processing
-- Supabase backend integration
-- Stripe subscriptions
-- AI damage analysis
+- Real-time updates
 
 ---
 
 # Tech Stack
 
+## Frontend
+
 - React Native
 - Expo
 - TypeScript
+
+## Libraries
+
 - Expo Router
 - Expo Image Picker
 - Expo Vector Icons
 
-Planned:
+## Planned Backend
 
 - Supabase
 - OpenAI API
@@ -79,27 +85,34 @@ Planned:
 
 # Vision
 
-ClaimBuild is being designed as a contractor-focused platform that bridges the gap between homeowners, contractors, and insurance claim workflows.
+ClaimBuild is being built to bridge the gap between:
+
+- contractors
+- homeowners
+- insurance claim workflows
 
 The platform focuses heavily on:
 
-- storm damage
-- property damage documentation
+- property damage claims
+- storm restoration
 - contractor estimates
-- insurance claim support
+- insurance documentation
+- mobile-first field operations
 
-while helping local contractors operate more professionally from their phones.
+The goal is to give contractors a professional, simple, and modern tool they can run directly from their phone.
 
 ---
 
 # Current Status
 
-Early-stage working mobile prototype.
+Active mobile MVP prototype.
 
-Current prototype includes:
+Working features currently include:
 
-- multi-screen navigation
-- contractor dashboard UI
-- insurance claims screen
-- live image uploads
-- GitHub project repository
+- claims intake forms
+- image uploads
+- saved claims workflow
+- claim detail pages
+- claim status tracking
+- GitHub version control
+- mobile navigation
